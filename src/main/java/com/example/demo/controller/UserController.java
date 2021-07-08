@@ -6,10 +6,7 @@ import com.example.demo.service.UserService;
 import com.example.demo.util.StringsUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public ApiActionResult addUser(@RequestParam(value = "userName") String userName,
                                    @RequestParam(value = "tel") Integer tel,
@@ -43,6 +41,7 @@ public class UserController {
 
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
     public ApiActionResult updateUser(@RequestParam(value = "userName") String userName,
                                       @RequestParam(value = "tel", required = false) Integer tel,
@@ -61,6 +60,7 @@ public class UserController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ApiActionResult search(@RequestParam(value = "userName", required = false) String userName,
                                   @RequestParam(value = "tel", required = false, defaultValue = "-1") Integer tel) {
@@ -73,6 +73,7 @@ public class UserController {
         }
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public ApiActionResult delete(@RequestParam(value = "userName") String userName) {
         log.info("userName is {} ", userName);

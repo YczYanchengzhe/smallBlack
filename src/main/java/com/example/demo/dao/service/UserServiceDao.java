@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.dao.mapper.UserMapper;
 import com.example.demo.dao.modol.UserInfo;
+import com.example.demo.util.StringsUtil;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class UserServiceDao<T> extends ServiceImpl<UserMapper, UserInfo> {
      */
     public List<UserInfo> getUserList(String userName, int tel) {
         return list(Wrappers.<UserInfo>query()
-                .eq(Objects.nonNull(userName), UserInfo.FIELD_NAME, userName)
+                .eq(StringsUtil.isNotNullOrEmpty(userName), UserInfo.FIELD_NAME, userName)
                 .eq(tel > 0, UserInfo.FIELD_TEL, tel));
     }
 
