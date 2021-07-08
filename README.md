@@ -62,7 +62,18 @@
         "desc": "success",
         "tipFileds": ""
     },
-    "result": "删除成功"
+    "result": [
+        {
+            "id": 6,
+            "name": "xiaohei",
+            "tel": 123,
+            "plate": "web",
+            "distance": 123,
+            "service": "qqq",
+            "createTime": "2021-07-08T00:31:25",
+            "updateTime": "2021-07-08T00:31:25"
+        }
+    ]
 }
 ```
 
@@ -76,23 +87,13 @@
 | 响应结果                                  |                                |
 
 ```json
+
 {
     "status": {
         "code": 0,
         "desc": "success",
         "tipFileds": ""
     },
-    "result": [
-        {
-            "id": 6,
-            "name": "xiaohei",
-            "tel": 123,
-            "plate": "web",
-            "distance": 123,
-            "service": "qqq",
-            "createTime": "2021-07-08T00:31:25",
-            "updateTime": "2021-07-08T00:31:25"
-        }
-    ]
+    "result": "删除成功"
 }
 ```
